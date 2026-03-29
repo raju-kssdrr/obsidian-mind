@@ -7,9 +7,9 @@ set -euo pipefail
 #   charcount.sh review.md "Competency Name" "Current Level"
 #   charcount.sh review.md "Competency Name" "Next Level"
 
-FILE="$1"
-SECTION="$2"
-SUB="$3"
+FILE="${1:-}"
+SECTION="${2:-}"
+SUB="${3:-}"
 
 if [ -z "$FILE" ] || [ -z "$SECTION" ]; then
     echo "Usage: charcount.sh <file> \"Section Header\" [subsection]"

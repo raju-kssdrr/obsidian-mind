@@ -1,9 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 INPUT=$(cat)
-TRANSCRIPT_PATH=$(echo "$INPUT" | python3 -c "import json,sys; print(json.load(sys.stdin).get('transcript_path',''))" 2>/dev/null || echo "")
-TRIGGER=$(echo "$INPUT" | python3 -c "import json,sys; print(json.load(sys.stdin).get('trigger','unknown'))" 2>/dev/null || echo "unknown")
+read -r TRANSCRIPT_PATH TRIGGER <<< "$(echo "$INPUT" | bash "$SCRIPT_DIR/find-python.sh" -c "
+import json,sys
+d=json.load(sys.stdin)
+print(d.get('transcript_path',''), d.get('trigger','unknown'))
+" 2>/dev/null || echo " unknown")"
 
 if [ -n "$TRANSCRIPT_PATH" ] && [ -f "$TRANSCRIPT_PATH" ]; then
   BACKUP_DIR="${CLAUDE_PROJECT_DIR:-$(pwd)}/thinking/session-logs"

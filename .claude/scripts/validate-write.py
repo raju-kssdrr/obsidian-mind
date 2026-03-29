@@ -3,7 +3,6 @@
 import json
 import sys
 import os
-import re
 from pathlib import Path
 
 def main():
@@ -42,11 +41,6 @@ def main():
                 if "date:" not in fm and "date :" not in fm:
                     warnings.append("Missing `date` in frontmatter")
 
-                # Check for wikilinks in body
-                body = parts[2]
-            else:
-                body = content
-
         # Check for wikilinks (skip very short notes)
         if len(content) > 300 and "[[" not in content:
             warnings.append("No [[wikilinks]] found — every note must link to at least one other note (vault convention)")
@@ -63,6 +57,7 @@ def main():
             }
         }
         json.dump(output, sys.stdout)
+        sys.stdout.flush()
 
     sys.exit(0)
 

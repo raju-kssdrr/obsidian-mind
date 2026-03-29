@@ -4,7 +4,7 @@ cd "$CLAUDE_PROJECT_DIR"
 
 # Persist vault path for the session
 if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
-  echo "export VAULT_PATH=$CLAUDE_PROJECT_DIR" >> "$CLAUDE_ENV_FILE"
+  echo "export VAULT_PATH=\"$CLAUDE_PROJECT_DIR\"" >> "$CLAUDE_ENV_FILE"
 fi
 
 # Incremental QMD re-index (fast, non-blocking if qmd not installed)
@@ -55,4 +55,4 @@ ls work/active/*.md 2>/dev/null | sed 's|work/active/||;s|\.md$||' | head -10 ||
 echo ""
 
 echo "### Vault File Listing"
-find . -name "*.md" -not -path "./.obsidian/*" -not -path "./thinking/*" -not -path "./.claude/*" | sort
+find . -name "*.md" -not -path "./.git/*" -not -path "./.obsidian/*" -not -path "./thinking/*" -not -path "./.claude/*" | sort
