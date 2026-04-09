@@ -19,7 +19,7 @@ The hook scripts in `.claude/scripts/` are agent-agnostic Python and shell — n
 | `session-start.sh` | Inject vault context at startup | SessionStart | SessionStart |
 | `classify-message.py` | Classify messages, inject routing hints | UserPromptSubmit | BeforeAgent |
 | `validate-write.py` | Validate frontmatter and wikilinks | PostToolUse | AfterTool |
-| `pre-compact.sh` | Back up transcript before compaction | PreCompact | PreCompress |
+| `pre-compact.sh` | Back up transcript before compaction | PreCompact (Codex: —) | PreCompress |
 
 ## Commands
 
