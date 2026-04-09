@@ -14,12 +14,12 @@ The hook scripts in `.claude/scripts/` are agent-agnostic Python and shell — n
 | Codex CLI | `.codex/hooks.json` | Shared hook scripts |
 | Gemini CLI | `.gemini/settings.json` | Shared hook scripts |
 
-| Script | Purpose | Claude / Codex event | Gemini event |
-|--------|---------|---------------------|--------------|
-| `session-start.sh` | Inject vault context at startup | SessionStart | SessionStart |
-| `classify-message.py` | Classify messages, inject routing hints | UserPromptSubmit | BeforeAgent |
-| `validate-write.py` | Validate frontmatter and wikilinks | PostToolUse | AfterTool |
-| `pre-compact.sh` | Back up transcript before compaction | PreCompact (Codex: —) | PreCompress |
+| Script | Purpose | Claude event | Codex event | Gemini event |
+|--------|---------|--------------|-------------|--------------|
+| `session-start.sh` | Inject vault context at startup | SessionStart | SessionStart | SessionStart |
+| `classify-message.py` | Classify messages, inject routing hints | UserPromptSubmit | UserPromptSubmit | BeforeAgent |
+| `validate-write.py` | Validate frontmatter and wikilinks | PostToolUse | PostToolUse | AfterTool |
+| `pre-compact.sh` | Back up transcript before compaction | PreCompact | — | PreCompress |
 
 ## Commands
 
