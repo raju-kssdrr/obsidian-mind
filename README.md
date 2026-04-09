@@ -102,7 +102,7 @@ You: "wrap up"
 5. Fill in **`brain/North Star.md`** with your goals — this grounds every session
 6. Start talking about work
 
-### Optional: QMD Semantic Search
+### 🔍 Optional: QMD Semantic Search
 
 For semantic search across the vault (find "what did we decide about caching" even if the note is titled "Redis Migration ADR"):
 
@@ -136,7 +136,7 @@ qmd update && qmd embed
 
 **Sessions have a designed lifecycle.** The `SessionStart` hook auto-injects your North Star goals, active projects, recent changes, open tasks, and the full vault file listing — your agent starts every session with context, not a blank slate. At the end, say "wrap up" and the agent runs `/om-wrap-up` — verifying notes, updating indexes, and spotting uncaptured wins. The `CLAUDE.md` operating manual governs everything in between: where to file things, how to link, when to split a note, what to do with decisions and incidents.
 
-### Hooks
+### 🔗 Hooks
 
 Five lifecycle hooks handle routing automatically:
 
@@ -151,7 +151,7 @@ Five lifecycle hooks handle routing automatically:
 > [!TIP]
 > You just talk. The hooks handle the routing.
 
-### Token Efficiency
+### ⚡ Token Efficiency
 
 obsidian-mind does **not** dump your entire vault into context. It uses tiered loading to keep token costs low:
 
@@ -165,7 +165,7 @@ obsidian-mind does **not** dump your entire vault into context. It uses tiered l
 
 SessionStart loads **lightweight context** — small excerpts from key files, filenames, and git summary — not full note contents. The agent queries by meaning via QMD before reading files, so it pulls only what's relevant. The classification hook is one lightweight Python call per message. The validation hook only fires on markdown writes and skips excluded paths.
 
-### Using with Other Agents
+### 🌐 Using with Other Agents
 
 obsidian-mind works with Claude Code, Codex CLI, and Gemini CLI. The vault conventions in `CLAUDE.md`, the hook scripts in `.claude/scripts/`, and the 18 commands in `.claude/commands/` are all agent-agnostic — pure Markdown, Python, and shell with no SDK dependencies.
 
@@ -349,7 +349,7 @@ Templates with YAML frontmatter, each including a `description` field for progre
 
 ## 🔧 What's Included
 
-### Obsidian Skills
+### 🧩 Obsidian Skills
 
 [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) pre-installed in `.claude/skills/`:
 
@@ -359,7 +359,7 @@ Templates with YAML frontmatter, each including a `description` field for progre
 - **json-canvas** — Visual `.canvas` file creation
 - **defuddle** — Web page to markdown extraction
 
-### QMD Skill
+### 🔍 QMD Skill
 
 A custom skill in `.claude/skills/qmd/` that teaches the agent to use [QMD](https://github.com/tobi/qmd) semantic search proactively — before reading files, before creating notes (to check for duplicates), and after creating notes (to find related content that should link to it).
 
