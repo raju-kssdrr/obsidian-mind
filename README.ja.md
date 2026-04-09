@@ -283,7 +283,7 @@ obsidian-mindはClaude Code、Codex CLI、Gemini CLIで動作します。`CLAUDE
 
 ```
 Home.md                 ボールトのエントリーポイント — 埋め込みBaseビュー、クイックリンク
-CLAUDE.md               運用マニュアル — Claudeが毎セッション読み込み
+CLAUDE.md               運用マニュアル — エージェントが毎セッション読み込み
 AGENTS.md               マルチエージェントガイド — Codex、Cursor、Windsurf等
 GEMINI.md               マルチエージェントガイド — Gemini CLI
 vault-manifest.json     テンプレートメタデータ — バージョン、構造、スキーマ
@@ -380,7 +380,7 @@ YAMLフロントマター付きテンプレート。段階的開示のための`
 | あなたのドメイン | フォルダの追加、`.claude/agents/`へのサブエージェント追加、`.claude/scripts/`への分類ルール追加 |
 
 > [!IMPORTANT]
-> `CLAUDE.md`は運用マニュアルです。規約を変更したら更新してください — Claudeは毎セッション読み込みます。
+> `CLAUDE.md`は運用マニュアルです。規約を変更したら更新してください — エージェントは毎セッション読み込みます。
 
 ---
 

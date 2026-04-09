@@ -283,7 +283,7 @@ obsidian-mind 支持 Claude Code、Codex CLI 和 Gemini CLI。`CLAUDE.md` 中的
 
 ```
 Home.md                 仓库入口——嵌入的 Base 视图、快捷链接
-CLAUDE.md               操作手册——Claude 每次会话都会读取
+CLAUDE.md               操作手册——Agent 每次会话都会读取
 AGENTS.md               多 Agent 指南——Codex、Cursor、Windsurf 等
 GEMINI.md               多 Agent 指南——Gemini CLI
 vault-manifest.json     模板元数据——版本、结构、schema
@@ -380,7 +380,7 @@ templates/              带有 YAML frontmatter 的 Obsidian 模板
 | 你的领域 | 添加文件夹、在 `.claude/agents/` 中添加子代理，或在 `.claude/scripts/` 中添加分类规则 |
 
 > [!IMPORTANT]
-> `CLAUDE.md` 是操作手册。当你改变规范时，请同步更新它——Claude 每次会话都会读取它。
+> `CLAUDE.md` 是操作手册。当你改变规范时，请同步更新它——Agent 每次会话都会读取它。
 
 ---
 
