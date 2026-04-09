@@ -75,6 +75,7 @@ jobs:
           git clone https://github.com/breferrari/obsidian-mind.git
           cd obsidian-mind
           npm install -g @tobilu/qmd   # optional: semantic search
+          qmd index && qmd embed      # build search index
           ```
 
           Or download the vault zip below and extract it into your Obsidian vaults folder. Open it in Claude Code and run `/om-standup`.
