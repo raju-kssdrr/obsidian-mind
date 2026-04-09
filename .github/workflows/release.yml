@@ -69,12 +69,15 @@ jobs:
           cat > /tmp/release_body.md <<'HEADER'
           ## Quick Start
 
+          **Requirements:** [Obsidian](https://obsidian.md), [Claude Code](https://claude.ai/code), Python 3.8+
+
           ```bash
           git clone https://github.com/breferrari/obsidian-mind.git
           cd obsidian-mind
+          npm install -g @tobilu/qmd   # optional: semantic search
           ```
 
-          Or download the vault zip below and extract it into your Obsidian vaults folder. Then open it in [Claude Code](https://claude.ai/code) and run `/om-standup`.
+          Or download the vault zip below and extract it into your Obsidian vaults folder. Open it in Claude Code and run `/om-standup`.
 
           HEADER
           # Strip leading whitespace from heredoc
