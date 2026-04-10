@@ -447,6 +447,14 @@ Your old vault is **never modified**. Use `--dry-run` to preview the plan withou
 
 ---
 
+## 🗺️ Roadmap
+
+**Python to TypeScript migration.** The hook scripts are moving to TypeScript in a future release. I'm doing this one myself because it ties into other work already in motion. PRs that propose this migration will be closed with thanks.
+
+**Other contributions welcome.** Open an issue first for anything bigger than a one-file change. Especially anything that touches the hooks, the install, or what people need installed. Saves you from building something that can't be merged.
+
+---
+
 ## 🙏 Design Influences
 
 - [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) — Official Obsidian agent skills
