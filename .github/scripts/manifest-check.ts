@@ -10,7 +10,8 @@
 
 import { readFileSync, readdirSync, type Dirent } from "node:fs";
 import { join } from "node:path";
-import { fileURLToPath } from "node:url";
+
+import { isMainModule } from "../../.claude/scripts/lib/main-guard.ts";
 
 type Manifest = { readonly infrastructure?: readonly string[] };
 
@@ -83,6 +84,7 @@ const WATCHED: ReadonlyArray<{
 // the corresponding entries in vault-manifest.json's `infrastructure` array.
 const WATCHED_ROOT_FILES: readonly string[] = [
 	"AGENTS.md",
+	"ARCHITECTURE.md",
 	"CLAUDE.md",
 	"CHANGELOG.md",
 	"CONTRIBUTING.md",
@@ -166,6 +168,4 @@ function main(): void {
 	);
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
-	main();
-}
+if (isMainModule(import.meta.url)) main();
